@@ -59,12 +59,12 @@ const CheckList = ({ navigation }) => {
     try {
       const response = await axios.get("http://207.23.173.203:8080/calculate/splitBill");
       const billData = response.data; // Assuming response.data contains the bill data
-      console.log(billData);
+      console.log("bill data not working", billData);
 
       // Pass billData to the LoadingPage
       navigation.navigate('loadingPage', { billData });
     } catch (error) {
-      console.log("Could not connect:", error);
+      console.log("Could not connect bill:", error);
     }
   };
 

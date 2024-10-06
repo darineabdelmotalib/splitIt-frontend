@@ -6,12 +6,12 @@ const loadingPage = ({ navigation, route }) => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Pass the billData to the BillSummary component after 3 seconds
-      navigation.replace('resultPage', { billData });
-    }, 5000);
+      // Pass the billData to the resultsPage component after 3 seconds
+      navigation.navigate('resultPage', { billData }); // Make sure the billData is passed here
+    }, 3000);
 
-    return () => clearTimeout(timer);
-  }, [navigation]);
+    return () => clearTimeout(timer); // Clean up the timer when the component is unmounted
+  }, [navigation, billData]); // Add billData to the dependency array
 
   return (
     <View style={styles.container}>
